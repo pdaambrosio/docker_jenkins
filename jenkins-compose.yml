@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  jenkins01:
+    image: jenkins/jenkins:lts
+    hostname: jenkins01
+    container_name: jk01
+    ports:
+     - 8080:8080
+     - 50000:50000
+    networks:
+     - jk-net
+    volumes:
+      - "jk-data:/var/jenkins_home/"
+
+networks:
+ jk-net:
+
+volumes:
+  jk-data:
